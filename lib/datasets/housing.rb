@@ -5,6 +5,7 @@ require_relative "dataset"
  module Datasets
    class Housing < Dataset
      Record = Struct.new(
+       :foo
      )
     def initialize
     end
