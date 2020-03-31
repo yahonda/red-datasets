@@ -5,9 +5,29 @@ require_relative "dataset"
  module Datasets
    class Housing < Dataset
      Record = Struct.new(
-       :foo
+       :crim,
+       :zn,
+       :indus,
+       :chas,
+       :nox,
+       :rm,
+       :age,
+       :dis,
+       :rad,
+       :tax,
+       :ptratio,
+       :b,
+       :lstat,
+       :medv
      )
     def initialize
+      super()
+      @metadata.id = "housing"
+      @metadata.name = "Housing"
+      @metadata.url = "TODO"
+      @metadata.description = lambda do
+        read_names
+      end
     end
 
     def each
